@@ -7,7 +7,9 @@ package com.cligest.vacinacao.dao;
 
 import com.cligest.vacinacao.domain.Departamento;
 import com.cligest.vacinacao.repository.DepartamentoRepository;
+import com.cligest.vacinacao.util.PersistenceUtil;
 import java.util.List;
+import javax.persistence.EntityManager;
 
 /**
  *
@@ -17,7 +19,13 @@ public class DepartamentoDAO implements DepartamentoRepository{
 
     @Override
     public Integer insert(Departamento d) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        EntityManager em =  PersistenceUtil.getEntityManagerFactory().createEntityManager();
+        em.getTransaction().begin();
+        em.persist(d);
+        
+        em.getTransaction().commit();
+        Integer i = d.getId();
+        return i;
     }
 
     @Override
