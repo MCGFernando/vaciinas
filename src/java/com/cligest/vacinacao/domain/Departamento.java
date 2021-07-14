@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "Departamento.findAll", query = "SELECT d FROM Departamento d"),
     @NamedQuery(name = "Departamento.findById", query = "SELECT d FROM Departamento d WHERE d.id = :id"),
-    @NamedQuery(name = "Departamento.findByDapartamento", query = "SELECT d FROM Departamento d WHERE d.dapartamento = :dapartamento")})
+    @NamedQuery(name = "Departamento.findByDepartamento", query = "SELECT d FROM Departamento d WHERE d.departamento = :departamento")})
 public class Departamento implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -35,8 +35,8 @@ public class Departamento implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-    @Column(name = "dapartamento")
-    private String dapartamento;
+    @Column(name = "departamento")
+    private String departamento;
 
     public Departamento() {
     }
@@ -53,12 +53,12 @@ public class Departamento implements Serializable {
         this.id = id;
     }
 
-    public String getDapartamento() {
-        return dapartamento;
+    public String getDepartamento() {
+        return departamento;
     }
 
-    public void setDapartamento(String dapartamento) {
-        this.dapartamento = dapartamento;
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
     }
 
     @Override

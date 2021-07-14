@@ -16,7 +16,7 @@ public class teste {
     public static void main(String[] args) {
         Departamento d = new Departamento();
         d.setId(null);
-        d.setDapartamento("DCOM");
+        d.setDepartamento("DCOM");
         DepartamentoDAO dao = new DepartamentoDAO();
         Integer i = dao.insert(d);
         System.out.print(i);
